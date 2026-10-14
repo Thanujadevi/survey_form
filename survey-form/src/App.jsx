@@ -17,22 +17,24 @@ function App() {
   }
   return (
     <div>
-      <h2>Survey Form</h2>
-      <input type="text" placeholder = "Enter Name" value ={name} onChange={(e)=>setName(e.target.value)} required/>
+      <h1>Survey Form</h1>
+      <p>Name</p><input type="text" placeholder = "Enter Name" value ={name} onChange={(e)=>setName(e.target.value)} required/>
       <br></br>
-      <input type="email" placeholder = "Enter Email" value ={email} onChange={(e)=>setEmail(e.target.value)} required/>
+      <p>Email</p><input type="email" placeholder = "Enter Email" value ={email} onChange={(e)=>setEmail(e.target.value)} required/>
       <br></br>
-      <input type="radio" value ={age} onChange={(e)=>setAge(e.target.value)} required/>
+      <p>Age</p>
+      <input type="radio"  value ={age} onClick={(e)=>setAge(e.target.value)} required/><p>10-20</p>
+      <input type="radio"  value ={age} onClick={(e)=>setAge(e.target.value)} required/><p>21-40</p>
+      <input type="radio"  value ={age} onClick={(e)=>setAge(e.target.value)} required/><p>41-60</p>
+      <input type="radio"  value ={age} onClick={(e)=>setAge(e.target.value)} required/><p>61-80</p>
+      <p>Technology</p>
+      <input type="drop-down" value={technology} onChange={(e)=>setTechnology(e.target.value)} required/>
       <br></br>
-      <option>10-20</option>
-      <input type="dropdown" value={technology} onChange={(e=>setTechnology(e.target.value))} required/>
-      <br></br>
-      <input type="text" placeholder="Enter Comments" value={comments} onChange={(e)=>setComments(e.target.value)}/>
+      <p>Comments</p><input type="textarea" placeholder="Enter Comments" value={comments} onChange={(e)=>setComments(e.target.value)} max="200"/>
       <br></br>
       <button type="submit" onClick={handleSubmit}>Submit</button>
       <p>{result}</p>
     </div>
   )
 }
-
 export default App
